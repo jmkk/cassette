@@ -1,0 +1,32 @@
+name: Xcode - Build and Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    name: Build and test the default scheme
+    runs-on: macos-10.15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: CocoaPod Install
+        run: pod install
+      - name: Build
+        uses: mxcl/xcodebuild@v1
+        with:
+          xcode: ^12
+          platform: iOS
+          action: build
+          configuration: release
+      - name: Test
+        uses: mxcl/xcodebuild@v1
+        with:
+          xcode: ^12
+          platform: iOS
+          action: test
+          configuration: Debug

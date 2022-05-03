@@ -17,19 +17,27 @@ jobs:
       - name: CocoaPod Install
         run: pod install
       - name: Build
-        uses: mxcl/xcodebuild@v1
+        uses: sersoft-gmbh/xcodebuild-action@v1
         with:
-          xcode: ^12
           scheme: Cassette
-          platform: iOS
+          destination: platform=iOS
           action: build
-          verbosity: verbose
-          configuration: release
-      - name: Test
-        uses: mxcl/xcodebuild@v1
-        with:
-          xcode: ^12
-          scheme: Cassette
-          platform: iOS
-          action: test
-          configuration: Debug
+          sdk: iphoneos
+          configuration: Release
+#       - name: Build
+#         uses: mxcl/xcodebuild@v1
+#         with:
+#           xcode: ^12
+#           scheme: Cassette
+#           platform: iOS
+#           action: build
+#           verbosity: verbose
+#           configuration: release
+#       - name: Test
+#         uses: mxcl/xcodebuild@v1
+#         with:
+#           xcode: ^12
+#           scheme: Cassette
+#           platform: iOS
+#           action: test
+#           configuration: Debug

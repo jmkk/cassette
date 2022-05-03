@@ -22,6 +22,7 @@ jobs:
           xcode: ^11
           platform: iOS
           action: build
+          verbosity: verbose
           configuration: release
       - name: Test
         uses: mxcl/xcodebuild@v1

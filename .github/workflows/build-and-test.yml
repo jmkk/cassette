@@ -20,6 +20,7 @@ jobs:
         uses: sersoft-gmbh/xcodebuild-action@v1
         with:
           scheme: Cassette
+          workspace: Cassette.xcworkspace
           destination: platform=iOS
           action: build
           sdk: iphoneos

@@ -19,14 +19,12 @@ jobs:
       - name: Build
         uses: mxcl/xcodebuild@v1
         with:
-          xcode: ^12
-          platform: iOS
+          xcode: ^11
           action: build
           configuration: release
       - name: Test
         uses: mxcl/xcodebuild@v1
         with:
-          xcode: ^12
-          platform: iOS
+          xcode: ^11
           action: test
           configuration: Debug

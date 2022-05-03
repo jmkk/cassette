@@ -21,7 +21,7 @@ jobs:
         with:
           scheme: Cassette
           workspace: Cassette.xcworkspace
-          destination: platform=iOS
+#          destination: platform=iOS
           action: build
           sdk: iphoneos
           configuration: Release

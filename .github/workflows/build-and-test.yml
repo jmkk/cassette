@@ -19,7 +19,8 @@ jobs:
       - name: Build
         uses: mxcl/xcodebuild@v1
         with:
-          xcode: ^11
+          xcode: ^12
+          scheme: Cassette
           platform: iOS
           action: build
           verbosity: verbose
@@ -27,7 +28,8 @@ jobs:
       - name: Test
         uses: mxcl/xcodebuild@v1
         with:
-          xcode: ^11
+          xcode: ^12
+          scheme: Cassette
           platform: iOS
           action: test
           configuration: Debug
